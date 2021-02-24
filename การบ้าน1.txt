@@ -1,0 +1,39 @@
+int Password;
+            string Institute;
+
+            Console.Write("Please input your password : ");
+            Password = int.Parse(Console.ReadLine());
+            Console.Write("Please input your institute : ");
+            Institute = Console.ReadLine();
+
+            if (Institute == "CIA")
+            {
+                bool check1 = (Password - 3) % 10 == 0 || (Password - 6) % 10 == 0 || (Password - 9) % 10 == 0;
+                bool check2 = check1 && (Password % 100) / 10 != 1 && (Password % 100) / 10 != 3 && (Password % 100) / 10 != 5;
+                bool check3 = check2 && (Password % 1000) / 1000 >= 6 && (Password % 1000) / 1000 < 8;
+                Console.WriteLine(check3);
+            }
+
+            else if (Institute == "FBI")
+            {
+                bool check4 = (Password % 1000000) / 100000 >= 4 && (Password % 1000000) / 100000 <= 7;
+                bool check5 = check4 && (Password % 1000) / 100 == 2 || (Password % 1000) / 100 != 4 || (Password % 1000) / 100 != 6;
+                bool check6 = check5 && (Password % 100000) / 10000 == 1 || (Password % 100000) / 10000 == 3 || (Password % 100000) / 10000 == 5
+                                     || (Password % 100000) / 10000 == 7 || (Password % 100000) / 10000 == 9;
+                Console.WriteLine(check6);
+            }
+
+            else if (Institute == "NSA")
+            {
+                bool check7 = 30 % (Password % 10) == 0;
+                bool check8 = check7 && (Password % 1000) % 3 == 0 && (Password % 1000) % 2 != 0;
+                bool check9 = check8 && (Password % 100000) == 7 || (Password % 10000) == 7 || (Password % 1000) == 7 || (Password % 100) == 7 || (Password % 10) == 7;
+                Console.WriteLine(check9);
+            }
+
+            else
+            {
+                Console.WriteLine("Your Password is False");
+            }
+
+            Console.ReadLine();
