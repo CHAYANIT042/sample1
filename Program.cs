@@ -1,43 +1,34 @@
 ﻿using System;
 
-namespace การบ้านโค้ดครั้งที่3
+namespace ข้อ2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("Input your mode : ");
-            string mode = Console.ReadLine();
-            Console.Write("Input your x : ");
-            double x = double.Parse(Console.ReadLine());
-            Console.Write("Input your y : ");
-            double y = double.Parse(Console.ReadLine());
-            double t = Math.Sqrt(y) + 1;
-            double p = Math.Pow((x - 1), 2);
+            int a, b;
+            Console.Write("input a : ");
+            a = int.Parse(Console.ReadLine());
+            Console.Write("input b : ");
+            b = int.Parse(Console.ReadLine());
+            int x = a, y = b;
 
-            if (x < 0)
+            do
             {
-                Console.WriteLine("Invalid mouse position");
-            }
-            else if (x >= 0)
-            {
-                if (mode == "time")
+                if (x < y)
                 {
-                    Console.WriteLine("{0}, {1}", x, p);
-                }
-                else if (mode == "price")
-                {
-                    Console.WriteLine("{0}, {1}", t, y);
+                    x = x + a;
                 }
                 else
                 {
-                    Console.WriteLine("Invalid mode");
+                    y = y + b;
                 }
             }
-
+            while (x != y);
+            {
+                Console.Write("{0}", x);
+            }
             Console.ReadLine();
-
-
         }
     }
 }
